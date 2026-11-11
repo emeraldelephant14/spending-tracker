@@ -2,13 +2,22 @@
   "name": "spending-tracker",
   "version": "1.0.0",
   "private": true,
-  "description": "A small Express API for trying product routes",
+  "description": "A student expense tracker with a React UI and SQLite API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "concurrently --kill-others-on-fail \"node --watch server.js\" \"vite --host 0.0.0.0 --config vite.config.mjs\"",
+    "build": "vite build --config vite.config.mjs"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^18.0.9",
+    "express": "^5.1.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.2.1",
+    "concurrently": "^10.0.6",
+    "vite": "^8.3.5"
   }
 }
